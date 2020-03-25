@@ -1,0 +1,96 @@
+﻿<Controls:MetroWindow x:Class="TarkovKillNotificator.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:local="clr-namespace:TarkovKillNotificator"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      
+                      BorderBrush="{DynamicResource MahApps.Brushes.Accent}"
+                      BorderThickness="1"
+                      GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+        
+                      mc:Ignorable="d"
+                      Title="타르코프 킬 알리미" Height="450" Width="800" Closing="MetroWindow_Closing">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Margin="5,5,5,0" Grid.Column="0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="KillCount" Content="Kill: 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,5,0" Width="100" Foreground="White" FontSize="24" Background="#FF333333" FontWeight="Bold"/>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0" Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="103" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label Content="하이라이트 폴더" Height="26" VerticalContentAlignment="Center" Padding="0,3" Margin="0,0,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="HighlightsPath" Height="26" MinHeight="26" Margin="0,0,0,5" VerticalContentAlignment="Center" ToolTip="엔비디아 하이라이트 임시 폴더 안에 있는 타르코프 폴더를 지정해주세요." ToolTipService.ShowOnDisabled="True" IsEnabled="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" />
+                        <Button x:Name="FindHighlights" Height="26" Margin="-1,0,0,5" FontSize="12" Padding="5,3" Content="찾아보기" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="2" Grid.Row="0" Click="FindHighlights_Click" />
+                    </Grid>
+                    <Grid Grid.Column="0" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="103" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <CheckBox x:Name="CustomSound" Content="커스텀 사운드" Height="26" VerticalContentAlignment="Center" IsChecked="false" ToolTip="사용자가 직접 선택한 사운드를 재생할지 여부를 결정합니다." ToolTipService.ShowOnDisabled="True" Padding="5,1,0,1" Margin="0,0,5,0" Click="CheckBox_Click" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" />
+                        <TextBox x:Name="CustomSoundPath" Height="26" MinHeight="26" Margin="0,0,0,0" VerticalContentAlignment="Center" ToolTip="사운드 파일을 선택해주세요." ToolTipService.ShowOnDisabled="True" IsEnabled="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" />
+                        <Button x:Name="FindCustomSound" Height="26" Margin="-1,0,0,0" FontSize="12" Padding="5,3" Content="찾아보기" HorizontalAlignment="Stretch" Grid.Column="2" Grid.Row="0" Click="FindCustomSound_Click" />
+                    </Grid>
+                </Grid>
+                <Grid Margin="5,0,0,0" Grid.Column="2" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox x:Name="AlwaysTop" Content="창 고정" Height="26" VerticalContentAlignment="Center" IsChecked="true" ToolTip="이 창을 항상 위에 고정할지 여부를 결정합니다." ToolTipService.ShowOnDisabled="True" Padding="5,1,0,1" Margin="0,1,5,0" Click="AlwaysTop_Click" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" />
+                    <CheckBox x:Name="PlaySound" Content="소리 재생" Height="26" VerticalContentAlignment="Center" IsChecked="true" ToolTip="킬 탐지시 소리의 재생 여부를 결정합니다." ToolTipService.ShowOnDisabled="True" Padding="5,1,0,1" Margin="0,1,5,0" Click="CheckBox_Click" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" />
+                </Grid>
+                <Grid Margin="5,0,0,0" Grid.Column="3" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Button x:Name="Start" Margin="0,0,0,5" FontSize="14" Padding="5,3" Content="모니터링 시작" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Width="120" FontWeight="Bold" Click="Start_Click" />
+                    <Button x:Name="OpenPopup" Margin="0,0,0,0" FontSize="12" Padding="5,3" Content="팝업 열기" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Width="120" Click="OpenPopup_Click" />
+                </Grid>
+            </Grid>
+            <ListBox x:Name="Log" Margin="5,5,5,5" Background="#FFEEEEEE" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" />
+        </Grid>
+    </Grid>
+</Controls:MetroWindow>
