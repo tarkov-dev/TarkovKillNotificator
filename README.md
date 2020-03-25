@@ -5,6 +5,8 @@ Nvidia Highlights에서 저장하는 임시 파일을 탐지하여 타르코프 
   <img src="https://user-images.githubusercontent.com/62662342/77567930-33a50e80-6f0b-11ea-9b4f-c447622d3cf3.png">
 </p>
 
+[다운로드](https://github.com/tarkov-dev/TarkovKillNotificator/releases)
+
 ## 기능 설명
 
 - 임시 폴더 선택 기능
