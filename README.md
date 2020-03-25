@@ -1,7 +1,9 @@
 # TarkovKillNotificator
 Nvidia Highlights에서 저장하는 임시 파일을 탐지하여 타르코프 게임 내 킬을 알려주는 프로그램입니다.
 
-![tarkov-main-image](https://user-images.githubusercontent.com/62662342/77567930-33a50e80-6f0b-11ea-9b4f-c447622d3cf3.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/62662342/77567930-33a50e80-6f0b-11ea-9b4f-c447622d3cf3.png">
+</p>
 
 ## 기능 설명
 
