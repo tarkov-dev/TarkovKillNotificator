@@ -21,7 +21,9 @@ Nvidia Highlights에서 저장하는 임시 파일을 탐지하여 타르코프 
 
 ## 기본 사용법
 
-프로그램을 다운로드하거나, Git을 Clone하여 직접 Build한 후 생성되는 TarkovKillNotificator.exe 파일을 실행해주세요.
+기본적으로 Geforce Experience 및 Nvidia Highlights를 켜야하며, 게임 옵션에서 Nvidia Highlights 기능을 활성화해야합니다.
+
+Nvidia Highlights가 준비되면 프로그램을 다운로드하거나, Git을 Clone하여 직접 Build한 후 생성되는 TarkovKillNotificator.exe 파일을 실행해주세요.
 
 이후 기본 임시 폴더를 사용하시거나 Geforce experience - 설정 - 하이라이트 - 스토리지 (임시 파일) 에 지정된 폴더를 하이라이트 폴더로 지정해주세요.
 
